@@ -1,25 +1,20 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
-import Footer from './components/footer.js';
+import Footer from './components/Footer.js';
+import NavBar from './components/NavBar';
+import ItemListContainer from './container/ItemListContainer';
 
 function App() {
 
-  const mensajeBienvenida = 'Bienvenidos a React!!!';
-
-  const alertMsg = () => {alert('Hiciste click ndea')};
+  const greeting = 'Hola! Bienvenido a mi React E-Commerce!';
 
   return (
     <div className="App">
-      <h1>{mensajeBienvenida}</h1>
-      <ul>
-        <li> React </li>
-        <li> JSX </li>
-        <li> Webpack </li>
-      </ul>
-      <Footer name='Jorge' action={alertMsg}>
-        <h3>este es mi children</h3>
-        <h4>puedo pasarle más de un child</h4>
-      </Footer>
+      
+      <NavBar />
+
+      <ItemListContainer greeting={greeting}/>
+      
     </div>
   );
 }
