@@ -6,14 +6,14 @@ import ItemListContainer from './container/ItemListContainer';
 
 function App() {
 
-  const greeting = 'Hola! Bienvenido a mi React E-Commerce!';
+  // const greeting = 'Hola! Bienvenido a mi React E-Commerce!';
 
   return (
     <div className="App">
       
       <NavBar />
 
-      <ItemListContainer greeting={greeting}/>
+      <ItemListContainer/>
       
     </div>
   );
