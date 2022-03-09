@@ -4,75 +4,19 @@
   box-sizing: border-box;
 }
 
-/* ---------- NAVBAR ---------- */
-.header{
-  background-color: grey;
-}
-.nav-container{
-  height: 60px;
-  width: 100%;
-  max-width: 1170px;
-  margin: 0 auto;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 0 1.5rem;
-}
-.nav-container h4{
-  font-size: 1.5rem;
+a:hover{
+  cursor:pointer;
 }
 
-.nav-category-list a{
-  font-weight: 600;
-  text-decoration: none;
-  color: black;
-  padding: 0.5rem;
-}
-.nav-category-list a:hover{
+.cartQuantity{
+  height: 28px;
+  font-family: 'Courier New', Courier, monospace;
+  position: absolute;
+  font-weight: 550;
+  font-size: 16px;
+  top: 10px;
+  right: 5px;
+  padding: 0px 5px;
+  border-radius: 30%;
   color: white;
-  text-shadow: 2px 2px black;
-}
-
-.nav-cart-icon{
-  font-size: 1.5rem;
-  cursor: pointer;
-}
-.nav-cart-icon:hover{
-  color: white;
-}
-
-/* ---------- ITEM LIST CONTAINER ---------- */
-.item-list-container{
-  padding: 4rem 0;
-}
-
-.productos-centro{
-  width: 90vw;
-  margin: 0 auto;
-  max-width: 1170px;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  column-gap: 1.5rem;
-  row-gap: 2rem;
-}
-
-.producto-img{
-  display: block;
-  width: 100%;
-  min-height: 10rem;
-}
-
-.producto h3{
-  text-transform:uppercase;
-  font-size: 1.1rem;
-  margin-top: 1rem;
-  text-align: center;
-}
-
-.producto h4{
-  margin-top: 0.7rem;
-  letter-spacing: var(--mainSpacing);
-  color: var(--primaryColor);
-  text-align: center;
-  
 }
