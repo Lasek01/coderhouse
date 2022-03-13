@@ -20,3 +20,13 @@ a:hover{
   border-radius: 30%;
   color: white;
 }
+
+.boton-cantidad{
+  color: white;
+  font-weight: 900;
+  font-size: 1rem;
+  width: 2rem;
+  height: 2rem;
+  margin: 0.5rem;
+  border-radius: 50%;
+}
