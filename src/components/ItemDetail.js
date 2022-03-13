@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react'
 import ItemCount from './ItemCount'
 import { CartContext } from '../context/CartContext'
+import { Link } from 'react-router-dom'
 
 
 const ItemDetail = (item) => {
@@ -9,7 +10,8 @@ const ItemDetail = (item) => {
 
     const [inCart, setInCart] = useState(false)
 
-    const addToCart = (qty) => { 
+    const addToCart = (qty) => {
+        alert(`Agregaste ${qty} items al carrito`)
         addItem(item.item, qty)
         setInCart(true);
     }
@@ -48,7 +50,7 @@ const ItemDetail = (item) => {
                             </div>
 
                             {inCart?(
-                                <button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded">Finalizar Compra</button>
+                                <Link to={`/cart`}><button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded">Finalizar Compra</button></Link>
                             )
                             :(
                                 <ItemCount 
