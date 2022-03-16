@@ -6,7 +6,8 @@ import { Link } from 'react-router-dom'
 
 const ItemDetail = (item) => {
 
-    const {addItem, clearCart} = useContext(CartContext)
+    const {addItem, removeItem} = useContext(CartContext)
+
 
     const [inCart, setInCart] = useState(false)
 

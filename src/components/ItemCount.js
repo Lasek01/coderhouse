@@ -1,16 +1,16 @@
 import React, { useState } from 'react'
 import CartWidget from './CartWidget'
 
-const ItemCount = ({stock, addToCart}) => {
+const ItemCount = ({initial, stock, addToCart}) => {
 
-    const [count, setCount] = useState(1)
+    const [count, setCount] = useState(initial)
     
     const subCount = () => { 
-        (count > 1) && setCount(count - 1)
+        if(count > initial) setCount(count - 1)
     }
 
     const addCount = () => { 
-        (count < stock) && setCount(count + 1)
+        if(count < stock) setCount(count + 1)
     }
 
     return (

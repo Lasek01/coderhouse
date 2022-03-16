@@ -14,7 +14,6 @@ function App() {
 
   return (
     <CartContextProvider>
-      <div className="App">
         <Router>
           <NavBar />
           <Routes>
@@ -24,7 +23,6 @@ function App() {
             <Route path='/cart' element={<Cart/>}/>
           </Routes>
         </Router>
-      </div>
     </CartContextProvider>
   );
 }
