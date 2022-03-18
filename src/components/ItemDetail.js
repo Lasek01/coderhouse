@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const ItemDetail = (item) => {
 
-    const {addItem, removeItem} = useContext(CartContext)
+    const {addItem} = useContext(CartContext)
 
 
     const [inCart, setInCart] = useState(false)
@@ -51,7 +51,7 @@ const ItemDetail = (item) => {
                             </div>
 
                             {inCart?(
-                                <Link to={`/cart`}><button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded">Finalizar Compra</button></Link>
+                                <Link to={`/cart`}><button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded">Ir al carrito</button></Link>
                             )
                             :(
                                 <ItemCount 

@@ -6,6 +6,7 @@ const CartContextProvider = ({children}) => {
 
     const [itemsCart, setItemsCart] = useState([])
 
+    //BUSCADOR
     const isInCart = (itemId) => {
         const found = itemsCart.find(item => item.id === itemId)
 
@@ -16,7 +17,8 @@ const CartContextProvider = ({children}) => {
             return true
         }
     }
-    
+
+    //AGREGAR ITEM
     const addItem = (item, qty) => {
         
         if (isInCart(item.id)){
@@ -34,6 +36,7 @@ const CartContextProvider = ({children}) => {
         }
     }
 
+    //REMOVER ITEM
     const removeItem = (itemId) => {
         if (isInCart(itemId)){
 
@@ -42,16 +45,31 @@ const CartContextProvider = ({children}) => {
             setItemsCart(updtCart)
         }
         else{
-            alert(`Error - No se encontro item con id: ${itemId} en el carrito`)
+            setItemsCart([])
         }
     }
 
+    //LIMPIAR CARRITO
     const clearCart = () => {
         setItemsCart([])
     }
 
+    //CONTAR ITEMS DEL CARRITO
+    const totalItemsCart = () => {
+        let totalItems = 0
+        itemsCart.forEach( i => totalItems += i.qty)
+        return totalItems
+    }
+
+    //TOTAL PRECIO CARRITO
+    const totalPrecioCart = () => {
+        let totalPrecio = 0
+        itemsCart.forEach( i => totalPrecio += i.precio*i.qty)
+        return totalPrecio
+    }
+
     return (
-    <CartContext.Provider value={ {addItem, removeItem, clearCart} }>
+    <CartContext.Provider value={ {itemsCart, addItem, removeItem, clearCart, totalItemsCart, totalPrecioCart} }>
         {children}
     </CartContext.Provider>
     )
