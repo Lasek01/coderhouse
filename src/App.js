@@ -10,8 +10,6 @@ import Cart from './components/Cart';
 
 function App() {
 
-  // const greeting = 'Hola! Bienvenido a mi React E-Commerce!';
-
   return (
     <CartContextProvider>
         <Router>

@@ -34,7 +34,7 @@ const Cart = () => {
     <div className="flex mb-6 border-gray-400 py-2">
       <span className="text-gray-700 text-2xl m-auto py-2">No hay items en el carrito</span>
     </div>
-    <div className="flex border-t border-b mb-6 border-gray-400 py-2">
+    <div className="flex border-t border-b mb-6 border-gray-400 py-2 mx-auto max-w-5xl px-5">
         <span className="text-gray-900 text-xl py-2">Total:</span>
         <span className="ml-auto text-gray-900 text-xl py-2">$0.00</span></div>
       <Link to={`/`}><button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded m-auto mt-10">Seguir comprando</button></Link>
@@ -65,7 +65,7 @@ const Cart = () => {
           {itemsCart.map((item) => {
             return(
               <tr key={item.id}>
-            <td className="px-4 py-3"><img style={{width: '70px'}} src={item.img}></img></td>
+            <td className="px-4 py-3"><img style={{width: '70px'}} src={item.imgSrc}></img></td>
             <td className="px-4 py-3">{item.nombre}</td>
             <td className="px-4 py-3">${item.precio}</td>
             <td className="px-4 py-3">{item.qty}</td>
@@ -79,11 +79,11 @@ const Cart = () => {
         </tbody>
       </table>
     </div>
-    <div className="flex border-t border-b mb-6 border-gray-400 py-2">
+    <div className="flex border-t border-b mb-6 border-gray-400 py-2 mx-auto max-w-5xl px-5">
         <span className="text-gray-900 text-xl py-2">Total:</span>
         <span className="ml-auto text-gray-900 text-xl py-2">${totalPrecioCart().toFixed(2)}</span></div>
     <div className="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
-      <button className="flex m-auto text-white bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-red-600 rounded" onClick={()=>clearCart()}>Vaciar carrito</button>
+      <button className="flex m-auto mt-10 text-white text-xl bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-red-600 rounded" onClick={()=>clearCart()}>Vaciar carrito</button>
     </div>
   </div>
 </section>
