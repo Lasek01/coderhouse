@@ -2,17 +2,17 @@
 
 
 
-#N&A Store
+# N&A Store
 
 N&A Store is an e-commerce project developed for a [CoderHouse](https://www.coderhouse.com/) React course.
 
-##Technologies
+## Technologies
 
 - **React** *v17.0.2*
 - **TailwindCSS** *v3.0*
 - **Firebase** *v9.6.9*
 
-##Features
+## Features
 
 This project is a [React](https://github.com/facebook/create-react-app) SPA app. It has a landing page with a catalogue of all the products and a navbar (that contains categories to filter those products and a cart widget with the total amount of items in it).
 
@@ -20,13 +20,13 @@ You can click on the image of a product to see its details and add the selected 
 
 This app also has a cart section where you can see all the products you've selected to buy.
 
-##Deployment
+## Deployment
 
 This project was deployed with [Vercel](https://vercel.com/).
 
 The las version of the deployed site is: ***futuro link al sitio***
 
-##Github
+## Github
 
 https://github.com/Lasek01/react25445
 
