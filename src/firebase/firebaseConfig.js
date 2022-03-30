@@ -54,3 +54,10 @@ export const getItem = async(id) => {
 
     return {...resultDoc.data(), id: resultDoc.id}
 }
+
+//enviar order
+export const sendOrder = async(orderData) => {
+    const colec = collection(db, "orders")
+    const orderDoc = await addDoc(colec, orderData)
+    return orderDoc.id
+}

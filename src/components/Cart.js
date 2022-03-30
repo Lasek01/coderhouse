@@ -1,9 +1,57 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState} from 'react'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../context/CartContext'
+import { sendOrder } from '../firebase/firebaseConfig'
+import CartForm from './CartForm'
+import { Timestamp } from 'firebase/firestore'
 
 const Cart = () => {
+  const [orderDone, setOrderDone] = useState(false)
+
   const {itemsCart, addItem, removeItem, clearCart, totalItemsCart, totalPrecioCart} = useContext(CartContext)
+
+
+
+  const handleSubmit = (buyer) => {
+    let itemsOrder = itemsCart.map((item) => {
+    return{
+      id: item.id,
+      nombre: item.nombre,
+      precioUnit: item.precio,
+      qty: item.qty,
+      precioTot: (item.precio*item.qty).toFixed(2)
+    }
+  })
+
+    const order = {
+      buyer: buyer,
+      items: [...itemsOrder],
+      total: totalPrecioCart().toFixed(2),
+      estado: 'generada',
+      timeStamp: Timestamp.fromDate(new Date()
+      )
+    }
+    
+    let createOrder = sendOrder(order);
+    
+    createOrder.then(res => setOrderDone(res))
+    .then()
+
+    clearCart();
+  }
+
+  if( orderDone ){
+    return(
+      <section className="text-gray-600 body-font">
+        <div className="container px-5 py-10 mx-auto">
+    
+          <h1 className="sm:text-4xl text-3xl font-medium title-font mb-10 text-gray-900 text-center">Gracias por tu compra!</h1>
+          <p className="text-center"> Este es el id de tu orden: <strong>{orderDone}</strong> </p>
+      </div>
+      <Link to={`/`}><button className="flex text-white bg-black border-0 py-2 px-6 focus:outline-none hover:bg-teal-600 rounded m-auto mt-10">Seguir comprando</button></Link>
+    </section>
+    )
+  }
 
   if( itemsCart.length === 0 ){
     return(
@@ -83,8 +131,9 @@ const Cart = () => {
         <span className="text-gray-900 text-xl py-2">Total:</span>
         <span className="ml-auto text-gray-900 text-xl py-2">${totalPrecioCart().toFixed(2)}</span></div>
     <div className="flex pl-4 mt-4 lg:w-2/3 w-full mx-auto">
-      <button className="flex m-auto mt-10 text-white text-xl bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-red-600 rounded" onClick={()=>clearCart()}>Vaciar carrito</button>
+      <button className="flex m-auto mt-10 mb-10 text-white text-xl bg-teal-500 border-0 py-2 px-10 focus:outline-none hover:bg-red-600 rounded" onClick={()=>clearCart()}>Vaciar carrito</button>
     </div>
+    <CartForm handleSubmit={handleSubmit}/>
   </div>
 </section>
     )
