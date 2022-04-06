@@ -35,8 +35,7 @@ const Cart = () => {
     let createOrder = sendOrder(order);
     
     createOrder.then(res => setOrderDone(res))
-    .then()
-
+    
     clearCart();
   }
 
