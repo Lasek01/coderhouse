@@ -24,7 +24,7 @@ This app also has a cart section where you can see all the products you've selec
 
 This project was deployed with [Vercel](https://vercel.com/).
 
-The last version of the deployed site is: ***futuro link al sitio***
+The last version of the deployed site is: ***https://react25445-ashen.vercel.app/***
 
 ## Github
 
